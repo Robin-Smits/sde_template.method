@@ -21,7 +21,7 @@ public class Main {
 
         // IF WE HAVE TO ADD AN OTHER TYPE OF CARD...
         // ...I QUIT THIS JOB.
-        PostCard card = new PostCard(printer);
+        Card card = new GraduationCard(printer);
 
         card.print();
     }
