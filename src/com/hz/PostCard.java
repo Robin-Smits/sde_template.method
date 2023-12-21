@@ -1,109 +1,45 @@
 package com.hz;
 
-public class PostCard {
+public class PostCard extends Card{
 
-    private boolean isPostCard;
-    private boolean isHighSchoolGraduationCard;
-
-    private Printer printer;
-
-    public PostCard(Printer printer,
-                    boolean isPostCard,
-                    boolean isHighSchoolGraduationCard) {
-        this.printer = printer;
-
-        this.isPostCard = isPostCard;
-        this.isHighSchoolGraduationCard = isHighSchoolGraduationCard;
+    public PostCard(Printer printer) {
+        super(printer);
     }
 
-    public void print() {
-
-        this.printHeader();
-        this.printMessage();
-        this.printImage();
-        this.printFooter();
+    public void printHeader(Printer printer) {
+        String header = "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
+        printer.printLine(header);
     }
 
-    private void printHeader() {
-        String header = "";
-
-        if(this.isPostCard) {
-            header = "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
-
-        } else if (this.isHighSchoolGraduationCard) {
-            header = "--@--#--&----------------------&--#--@--";
-        }
-        this.printer.printLine(header);
+    @Override
+    void printMessage(Printer printer) {
+        String msg = "Greetings from the netherlands!";
+        printer.printLine(msg);
     }
 
-    private void printMessage() {
-        String msg = "";
-
-        if(this.isPostCard) {
-            msg = "Greetings from the netherlands!";
-
-        } else if (this.isHighSchoolGraduationCard) {
-            msg = "This calls for celebrating! Congratulations!";
+    public void printImage(Printer printer) {
+            printer.printLine("        Art by Hayley Jane Wakenshaw");
+            printer.printLine("");
+            printer.printLine("             /)  (\\");
+            printer.printLine("        .-._((,~~.))_.-,");
+            printer.printLine("         `=.   99   ,='");
+            printer.printLine("           / ,o~~o. \\");
+            printer.printLine("          { { .__. } }");
+            printer.printLine("           ) `~~~\' (");
+            printer.printLine("          /`-._  _\\.-\\");
+            printer.printLine("         /         )  \\");
+            printer.printLine("       ,-X        #   X-.");
+            printer.printLine("hjw   /   \\          /   \\");
+            printer.printLine("     (     )| |  | |(     )");
+            printer.printLine("      \\   / | |  | | \\   /");
+            printer.printLine("       \\_(.-( )--( )-.)_/");
+            printer.printLine("       /_,\\ ) /  \\ ( /._\\");
+            printer.printLine("           /_,\\  /._\\");
         }
 
-        this.printer.printLine(msg);
+    @Override
+    void printFooter(Printer printer) {
+        String footer = "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
+        printer.printLine(footer);
     }
-
-    private void printImage() {
-
-        if(this.isPostCard) {
-            this.printer.printLine("        Art by Hayley Jane Wakenshaw");
-            this.printer.printLine("");
-            this.printer.printLine("             /)  (\\");
-            this.printer.printLine("        .-._((,~~.))_.-,");
-            this.printer.printLine("         `=.   99   ,='");
-            this.printer.printLine("           / ,o~~o. \\");
-            this.printer.printLine("          { { .__. } }");
-            this.printer.printLine("           ) `~~~\' (");
-            this.printer.printLine("          /`-._  _\\.-\\");
-            this.printer.printLine("         /         )  \\");
-            this.printer.printLine("       ,-X        #   X-.");
-            this.printer.printLine("hjw   /   \\          /   \\");
-            this.printer.printLine("     (     )| |  | |(     )");
-            this.printer.printLine("      \\   / | |  | | \\   /");
-            this.printer.printLine("       \\_(.-( )--( )-.)_/");
-            this.printer.printLine("       /_,\\ ) /  \\ ( /._\\");
-            this.printer.printLine("           /_,\\  /._\\");
-        }
-        else if (this.isHighSchoolGraduationCard) {
-
-            this.printer.printLine("     ,_");
-            this.printer.printLine("| `\"\"---..._____");
-            this.printer.printLine("'-...______    _````\"\"\"\"\"\"\"'`|");
-            this.printer.printLine("       \\   ```` ``\"---...__  |");
-            this.printer.printLine("       |`              |   ``!");
-            this.printer.printLine("       |               |     A");
-            this.printer.printLine("       |               /\\   /#\\");
-            this.printer.printLine("       /`--..______..-'  |  ###");
-            this.printer.printLine("      |   /  `\\    /`--. |  ###");
-            this.printer.printLine("     _|  |  .-;`-./;-.  ||  ###");
-            this.printer.printLine("    / \\  \\ /\\_|    |_/\\ //\\ ##'");
-            this.printer.printLine("    |  `-' \\__/ _  \\__/ |  |`#");
-            this.printer.printLine("   \\_,                 /_/");
-            this.printer.printLine("       `\\              /");
-            this.printer.printLine("         '.  '.__.'  .'");
-            this.printer.printLine(" jgs      `-,____,-'");
-            this.printer.printLine("           /\"\"\"I\"\"\\");
-            this.printer.printLine("           /`---'--'\\");
-
-        }
-    }
-
-    private void printFooter() {
-        String footer = "";
-
-        if(this.isPostCard) {
-            footer = "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
-
-        } else if (this.isHighSchoolGraduationCard) {
-            footer = "--@--#--&----------------------&--#--@--";
-        }
-        this.printer.printLine(footer);
-    }
-
 }
