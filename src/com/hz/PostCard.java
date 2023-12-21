@@ -11,7 +11,6 @@ public class PostCard extends Card{
         printer.printLine(header);
     }
 
-    @Override
     void printMessage(Printer printer) {
         String msg = "Greetings from the netherlands!";
         printer.printLine(msg);
@@ -37,7 +36,6 @@ public class PostCard extends Card{
             printer.printLine("           /_,\\  /._\\");
         }
 
-    @Override
     void printFooter(Printer printer) {
         String footer = "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
         printer.printLine(footer);
